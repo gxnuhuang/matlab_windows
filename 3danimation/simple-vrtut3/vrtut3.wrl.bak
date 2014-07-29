@@ -31,6 +31,7 @@ DEF S Transform {
   children Shape {
     appearance Appearance {
       material Material {
+        diffuseColor 0.2 1 1
       }
     }
     geometry Sphere {
