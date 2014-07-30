@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<appProperties xmlns="http://schemas.mathworks.com/matlab/app/2012/appProperties" signature="CC131A11D0E3C5FCB5C85E271F19902299D8C65E">
+
+  <entryPoint>MobileSensorExplorer</entryPoint>
+
+  <name>Mobile Sensor Explorer</name>
+
+  <version>1.0</version>
+
+  <createdByMATLABRelease>(R2013a)</createdByMATLABRelease>
+
+  <GUID>2ad6026a-e90a-4af9-9f84-30c3ce25b4f0</GUID>
+
+  <summary>Explore data from your mobile device sensors</summary>
+
+  <description>Displays the readings from all active sensors on an Android or Apple mobile device.</description>
+
+  <author>
+    <name>MathWorks Mobile Sensor Connectivity Team</name>
+    <contact></contact>
+    <organization>The MathWorks, Inc.</organization>
+  </author>
+
+  <supportedPlatforms/>
+
+  <requiredProducts>
+    <product identifier="-1" name="MATLAB" version="8.2"/>
+  </requiredProducts>
+
+  <numFiles>5</numFiles>
+
+  <created>2013-09-10T13:59:12Z</created>
+
+  <appEntries>
+    <appFile>/MobileSensorExplorer.m</appFile>
+    <appFile>/+matlab/+mobilesensor/+internal/+mobileSensorExplorer/GeodeticPositionVisualization.m</appFile>
+    <appFile>/+matlab/+mobilesensor/+internal/+mobileSensorExplorer/MembraneMotion.m</appFile>
+    <appFile>/+matlab/+mobilesensor/+internal/+mobileSensorExplorer/SensorVisualization.m</appFile>
+    <appFile>/+matlab/+mobilesensor/+internal/+mobileSensorExplorer/SensorVisualizationInstanteous.m</appFile>
+  </appEntries>
+
+</appProperties>
