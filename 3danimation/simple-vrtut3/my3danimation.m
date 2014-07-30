@@ -1,6 +1,6 @@
 
 fprintf('hello\n');
-
+global myworld
 myworld = vrworld('my3danimation')
 open(myworld)
 view(myworld);
@@ -15,5 +15,7 @@ for i=1:length(x1)
     vrdrawnow;
     pause(0.1);
 end
+close(myworld);
+delete(myworld);
 
 %myworld.B1.translation = [15 0.25 20];
