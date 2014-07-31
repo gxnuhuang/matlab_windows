@@ -4,7 +4,7 @@ function timer_obj=mycalltimerback()
     timer_obj.Period = 0.01;
     
    % timer_obj.TasksToExecute = 10; 
-    timer_obj.ExecutionMode = 'fixedSpacing';
+    timer_obj.ExecutionMode = 'fixedRate';
     %sensorgroup
     global sensor_obj;
     sensor_obj = sensorgroup('AndroidMobile')
@@ -24,6 +24,8 @@ function timercallback(mTimer,~)
     x=y*1.0e4
     fprintf('hzq:timer_callback test  %f  %f  %f    \n',y(1),y(2),y(3));
     %whos
-   myworld.B1.rotation = [x(1) x(2) 1 x(3)];
+   %myworld.B1.rotation = [x(1) x(2) 1 x(3)];
+  % myworld.B1.rotation = [1 x(1) x(2) x(3)];
+  myworld.B1.rotation = [x(1) x(2) x(3) 1];
 end
 
