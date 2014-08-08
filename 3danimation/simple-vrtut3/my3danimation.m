@@ -1,7 +1,7 @@
 
 fprintf('hello\n');
 global myworld
-myworld = vrworld('my3danimation')
+myworld = vrworld('D:\Matlab_Work\3danimation\simple-vrtut3\my3danimation.wrl')
 open(myworld)
 view(myworld);
 vrdrawnow;

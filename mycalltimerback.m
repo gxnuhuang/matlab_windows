@@ -10,7 +10,7 @@ function timer_obj=mycalltimerback()
     sensor_obj = sensorgroup('AndroidMobile')
     %3d animation
     global myworld;
-    myworld = vrworld('my3danimation')
+    myworld = vrworld('D:\Matlab_Work\3danimation\simple-vrtut3\my3danimation.wrl')
     open(myworld);
     view(myworld);
     vrdrawnow;
