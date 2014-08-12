@@ -22,7 +22,7 @@ function varargout = mysample_timer(varargin)
 
 % Edit the above text to modify the response to help mysample_timer
 
-% Last Modified by GUIDE v2.5 08-Aug-2014 15:23:36
+% Last Modified by GUIDE v2.5 12-Aug-2014 11:22:33
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -90,14 +90,21 @@ function mytime_callback(hObject,eventdata,hfigure)
 % Timer timer1 callback, called each time timer iterates.
 % Gets surface Z data, adds noise, and writes it back to surface object.
     global sensor_obj;
+    global myworld;
     handles = guidata(hfigure);
     y=sensor_obj.MagneticField
-    x=y*1.0e4*1000
+    x=y*1.0e4
     Strx=num2str(x(1),'%-11f\n');
     set(handles.Magnet_x,'String',Strx)
     Strx1=num2str(x(1));
     set(handles.mana_X2,'String',Strx1)
     fprintf('%d\n',handles.hzq);
+%   fprintf('time_callback\n');
+% detect myworld 
+    if isvalid(myworld)==1
+ %   fprintf('view world\n');
+    myworld.B1.rotation = [x(1) x(2) x(3) 1];
+    end
 % END USER CODE
 
 
@@ -134,3 +141,25 @@ function mana_X2_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to mana_X2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes on button press in open_vrworld.
+function open_vrworld_Callback(hObject, eventdata, handles)
+% hObject    handle to open_vrworld (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    fprintf('open world \n');
+    global myworld;
+    myworld = vrworld('D:\Matlab_Work\3danimation\simple-vrtut3\my3danimation.wrl')
+    open(myworld);
+    view(myworld);
+    vrdrawnow;
+
+% --- Executes on button press in close_vrworld.
+function close_vrworld_Callback(hObject, eventdata, handles)
+% hObject    handle to close_vrworld (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    global myworld;
+    close(myworld);
+    delete(myworld);
