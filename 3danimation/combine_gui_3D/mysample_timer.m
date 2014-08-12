@@ -82,7 +82,9 @@ function start_time_Callback(hObject, eventdata, handles)
 % hObject    handle to start_time (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-start(handles.timer);
+if strcmp(get(handles.timer, 'Running'), 'off')
+    start(handles.timer);
+end
 
 function mytime_callback(hObject,eventdata,hfigure)
 % Timer timer1 callback, called each time timer iterates.
@@ -104,7 +106,9 @@ function stop_time_Callback(hObject, eventdata, handles)
 % hObject    handle to stop_time (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-stop(handles.timer);
+if strcmp(get(handles.timer, 'Running'), 'on')
+    stop(handles.timer);
+end
 
 
 % --- Executes on button press in connect.
